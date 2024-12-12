@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bee Agent Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <!-- Left settings panel -->
+      <div class="settings-panel">
+          <h2>Settings</h2>
+
+          <label>Business Description (use <code>$businessDescription</code>)</label>
+          <div class="textarea-wrapper">
+            <textarea id="business-description" placeholder="Describe your business..." rows="3"></textarea>
+            <button class="toggle-size-btn" data-target="business-description">Toggle Size</button>
+          </div>
+
+          <label>Personality (use <code>$personality</code>)</label>
+          <div class="textarea-wrapper">
+            <textarea id="personality" placeholder="Describe the personality of the agent..." rows="3"></textarea>
+            <button class="toggle-size-btn" data-target="personality">Toggle Size</button>
+          </div>
+
+          <label>Category (use <code>$category</code>)</label>
+          <input type="text" id="category" placeholder="Enter category"/>
+
+          <label>System Prompt</label>
+          <div class="textarea-wrapper">
+            <textarea id="system-prompt" placeholder="Enter the full system prompt here. You can use $businessDescription, $personality, and $category in your prompt." rows="3"></textarea>
+            <button class="toggle-size-btn" data-target="system-prompt">Toggle Size</button>
+          </div>
+
+          <label>First Question</label>
+          <input type="text" id="first-question" placeholder="First question to start with..."/>
+
+          <button id="start-session-btn">Start Session</button>
+
+          <h2>Previous Sessions</h2>
+          <div id="session-list" class="session-list">
+            <!-- Dynamically populated -->
+          </div>
+      </div>
+
+      <!-- Right chat panel -->
+      <div class="chat-container">
+          <div id="chat-history" class="chat-history"></div>
+          <div class="input-area">
+              <input type="text" id="user-input" placeholder="Type your message..."/>
+              <button id="send-btn">Send</button>
+          </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

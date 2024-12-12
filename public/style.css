@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0; padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.settings-panel {
+    width: 300px;
+    background: #fafafa;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.settings-panel h2 {
+    margin-top: 0;
+}
+
+.settings-panel label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.settings-panel textarea, .settings-panel input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.textarea-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.toggle-size-btn {
+    background: #ccc;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    height: fit-content;
+    margin-top: 5px;
+}
+
+.toggle-size-btn:hover {
+    background: #bbb;
+}
+
+.settings-panel button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.session-list {
+    margin-top: 10px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.session-item button {
+    flex: 1;
+    text-align: left;
+    border: none;
+    background: #333; 
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.session-item button:hover {
+    background: #444;
+}
+
+.delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+.delete-icon:hover {
+    color: #ccc;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 60%;
+    line-height: 1.4;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+.message.user {
+    background: #d1f7c4;
+    align-self: flex-start;
+    animation: fadeInLeft 0.3s forwards;
+}
+
+.message.assistant {
+    background: #e4e4e4;
+    align-self: flex-end;
+    animation: fadeInRight 0.3s forwards;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 10px;
+    background: #eee;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #6c63ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Typing indicator */
+.typing {
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #666;
+    width: 1em;
+    text-align: left;
+}
+
+.typing::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+    animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+    0%   { content: ''; }
+    33%  { content: '.'; }
+    66%  { content: '..'; }
+    100% { content: '...'; }
+}
+
+@keyframes fadeIn {0% {opacity: 0;} 100% {opacity: 1;}}
+
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}

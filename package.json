@@ -1,0 +1,35 @@
+{
+    "name": "bee-agent-chat",
+    "version": "1.0.0",
+    "description": "A Node.js backend to support a chat interface with GPT-4 and MongoDB storage",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "openai",
+        "mongodb",
+        "chatbot",
+        "gpt-4"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "mongoose": "^7.0.3",
+        "openai": "^4.76.2",
+        "uuid": "^9.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/physknoll/Chat-Prompt-Environment.git"
+    },
+    "bugs": {
+        "url": "https://github.com/physknoll/Chat-Prompt-Environment/issues"
+    },
+    "homepage": "https://github.com/physknoll/Chat-Prompt-Environment#readme"
+}
